@@ -25,7 +25,7 @@
       "script_location": "defi"
     },
     "[Twitter] Updating twitter data": {
-      "schedule": "0 11 */3 * *",
+      "schedule": "45 */2 * * *",
       "npm_script": "update-twitter",
       "script_location": "defi/dev-metrics"
     },
