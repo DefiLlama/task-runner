@@ -5,10 +5,14 @@
       "run_on_load": true,
       "bash_script": [
         "[ ! -d 'repo' ] && git clone  --depth 1 https://github.com/DefiLlama/defillama-server repo",
-        "cd repo/defi",
+        "[ ! -d 'runner' ] && git clone  --depth 1 https://github.com/DefiLlama/task-runner runner",
+        "cd runner",
+        "git pull",
+        "cd ../repo/defi",
         "git stash",
         "git pull",
-        "git submodule update --init --recursive --remote --merge",
+        "git submodule update --init --recursive",
+        "git submodule update --remote --merge",
         "npm i",
         "npm update @defillama/sdk",
         "cd dev-metrics",
@@ -16,7 +20,6 @@
       ]
     },
     "[TVL] Updating tvl data": {
-      "run_on_load": true,
       "schedule": "3 * * * *",
       "npm_script": "task-tvl",
       "script_location": "defi"
