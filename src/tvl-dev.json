@@ -24,7 +24,6 @@
     },
     "[TVL] Updating tvl data": {
       "schedule": "3 * * * *",
-      "run_on_load": true,
       "npm_script": "task-tvl",
       "script_location": "defi"
     },
