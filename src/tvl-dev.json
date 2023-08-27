@@ -19,7 +19,10 @@
         "npm i",
         "export TVL_LOCAL_CACHE_ROOT_FOLDER=/cache",
         "pwd",
-        "ls -la /cache"
+        "echo 'check if files exist in cache folder'",
+        "echo $TVL_LOCAL_CACHE_ROOT_FOLDER",
+        "ls -la $TVL_LOCAL_CACHE_ROOT_FOLDER",
+        "ls -la /"
       ]
     },
     "[TVL] Updating tvl data": {
