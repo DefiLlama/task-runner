@@ -16,11 +16,15 @@
         "npm i",
         "npm update @defillama/sdk",
         "cd dev-metrics",
-        "npm i"
+        "npm i",
+        "export TVL_LOCAL_CACHE_ROOT_FOLDER=/cache",
+        "pwd",
+        "ls -la /cache"
       ]
     },
     "[TVL] Updating tvl data": {
       "schedule": "3 * * * *",
+      "run_on_load": true,
       "npm_script": "task-tvl",
       "script_location": "defi"
     },
