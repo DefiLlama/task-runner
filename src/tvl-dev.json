@@ -17,12 +17,11 @@
         "npm update @defillama/sdk",
         "cd dev-metrics",
         "npm i",
-        "export TVL_LOCAL_CACHE_ROOT_FOLDER=/cache",
+        "echo '----debug logs---'",
         "pwd",
         "echo 'check if files exist in cache folder'",
         "echo $TVL_LOCAL_CACHE_ROOT_FOLDER",
-        "ls -la $TVL_LOCAL_CACHE_ROOT_FOLDER",
-        "ls -la /"
+        "ls -la $TVL_LOCAL_CACHE_ROOT_FOLDER"
       ]
     },
     "[TVL] Updating tvl data": {
