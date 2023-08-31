@@ -24,11 +24,6 @@
       "npm_script": "task-tvl",
       "script_location": "defi"
     },
-    "[Coins] Fetch Coingecko Data 5 min": {
-      "schedule": "*/5 * * * *",
-      "npm_script": "test",
-      "script_location": "coins/src/runner"
-    },
     "[Twitter] Updating twitter data": {
       "schedule": "45 */2 * * *",
       "npm_script": "update-twitter",
