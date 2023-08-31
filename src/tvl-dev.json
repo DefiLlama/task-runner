@@ -24,6 +24,11 @@
       "npm_script": "task-tvl",
       "script_location": "defi"
     },
+    "[TVL - bkp] Updating tvl data": {
+      "schedule": "38 * * * *",
+      "npm_script": "task-tvl",
+      "script_location": "defi"
+    },
     "[Twitter] Updating twitter data": {
       "schedule": "45 */2 * * *",
       "npm_script": "update-twitter",
