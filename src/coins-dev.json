@@ -1,0 +1,21 @@
+{
+  "tasks": {
+    "[Init] Pull code from git": {
+      "schedule": "0 * * * *",
+      "run_on_load": true,
+      "bash_script": [
+        "[ ! -d 'repo' ] && git clone  --depth 1 https://github.com/DefiLlama/defillama-server repo",
+        "cd ../repo/coins",
+        "git stash",
+        "git pull",
+        "npm i",
+        "npm update @defillama/sdk"
+      ]
+    },
+    "Test task": {
+      "schedule": "*/5 * * * *",
+      "npm_script": "runner-test",
+      "script_location": "coins"
+    }
+  }
+}
