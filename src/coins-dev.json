@@ -5,16 +5,11 @@
       "run_on_load": true,
       "bash_script": [
         "[ ! -d 'repo' ] && git clone  --depth 1 https://github.com/DefiLlama/defillama-server repo",
-        "[ ! -d 'runner' ] && git clone  --depth 1 https://github.com/DefiLlama/task-runner runner",
-        "cd runner",
-        "git pull",
         "cd ../repo/coins",
         "git stash",
         "git pull",
         "npm i",
-        "npm update @defillama/sdk",
-        "cd dev-metrics",
-        "npm i"
+        "npm update @defillama/sdk"
       ]
     },
     "Test task": {
