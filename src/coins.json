@@ -26,6 +26,16 @@
       "schedule": "*/5 * * * *",
       "npm_script": "fetch-cg-min",
       "script_location": "coins"
+    },
+    "Store Defi Coins": {
+      "schedule": "40 * * * *",
+      "npm_script": "store-defi-coins",
+      "script_location": "coins"
+    },
+    "Store Bridge Coins": {
+      "schedule": "40 * * * *",
+      "npm_script": "store-bridge-coins",
+      "script_location": "coins"
     }
   }
 }
