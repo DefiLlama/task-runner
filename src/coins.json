@@ -28,12 +28,12 @@
       "script_location": "coins"
     },
     "Store Defi Coins": {
-      "schedule": "5 * * * *",
+      "schedule": "42 * * * *",
       "npm_script": "store-defi-coins",
       "script_location": "coins"
     },
     "Store Bridge Coins": {
-      "schedule": "40 * * * *",
+      "schedule": "37 * * * *",
       "npm_script": "store-bridge-coins",
       "script_location": "coins"
     }
