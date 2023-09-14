@@ -28,7 +28,7 @@
       "script_location": "coins"
     },
     "Store Defi Coins": {
-      "schedule": "12 * * * *",
+      "schedule": "26 * * * *",
       "npm_script": "store-defi-coins",
       "script_location": "coins"
     },
