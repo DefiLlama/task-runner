@@ -22,9 +22,14 @@
       "npm_script": "fetch-cg-hourly",
       "script_location": "coins"
     },
-    "Fetch CG Min": {
+    "Fetch CG Main": {
       "schedule": "*/5 * * * *",
       "npm_script": "fetch-cg-min",
+      "script_location": "coins"
+    },
+    "Fetch CG All": {
+      "schedule": "*/15 * * * *",
+      "npm_script": "fetch-cg-all",
       "script_location": "coins"
     },
     "Store Defi Coins": {
