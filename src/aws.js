@@ -15,6 +15,7 @@ async function loadSecrets() {
     if (key !== 'PK' && key !== 'SK') process.env[key] = value
   })
   console.log('[test env] AVAX_RPC:', process.env.AVAX_RPC)
+  console.log('[test env] IS_COOLIFY_TASK:', process.env.IS_COOLIFY_TASK)
 }
 
 module.exports = {

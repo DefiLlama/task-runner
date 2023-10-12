@@ -7,6 +7,7 @@ const { loadSecrets } = require('./aws')
 cron.schedule('1 * * * *', hotloadTasks)
 
 const scheduledTasks = {}
+process.env.IS_COOLIFY_TASK = 'true'
 
 // todo: add timeout parameter, add option to export log to r2/s3 something with weekly cleanup
 
