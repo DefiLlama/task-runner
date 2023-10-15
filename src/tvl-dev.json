@@ -20,6 +20,10 @@
         "npm i",
         "npm run cache-config",
         "npm update @defillama/sdk",
+        "cd DefiLlama-Adapters",
+        "git checkout main",
+        "git pull",
+        "cd ..",
         "cd dev-metrics",
         "npm i"
       ]
