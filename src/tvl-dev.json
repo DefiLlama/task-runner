@@ -13,7 +13,7 @@
         "git pull",
         "git submodule update --init --recursive",
         "git submodule update --remote --merge",
-        "cd Defillama-Adapters",
+        "cd DefiLlama-Adapters",
         "git checkout main",
         "git pull",
         "cd ..",
