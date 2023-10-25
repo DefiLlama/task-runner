@@ -1,0 +1,38 @@
+{
+  "tasks": {
+    "[Init] Pull code from git": {
+      "schedule": "*/15 * * * *",
+      "run_on_load": true,
+      "bash_script": [
+        "[ ! -d 'repo' ] && git clone  --depth 1 https://github.com/DefiLlama/defillama-server repo",
+        "[ ! -d 'runner' ] && git clone  --depth 1 https://github.com/DefiLlama/task-runner runner",
+        "cd runner",
+        "git pull",
+        "cd ../repo/defi",
+        "git stash",
+        "git pull",
+        "git submodule update --init --recursive",
+        "git submodule update --remote --merge",
+        "cd DefiLlama-Adapters",
+        "git checkout main",
+        "git pull",
+        "cd ..",
+        "npm i",
+        "npm run cache-config",
+        "npm update @defillama/sdk",
+        "cd DefiLlama-Adapters",
+        "git checkout main",
+        "git pull",
+        "cd ..",
+        "cd dev-metrics",
+        "npm i"
+      ]
+    },
+    "Start api server": {
+      "run_on_load": true,
+      "schedule": "59 * * * *",
+      "npm_script": "api2-start-server",
+      "script_location": "defi"
+    }
+  }
+}
