@@ -4,6 +4,7 @@
       "schedule": "*/15 * * * *",
       "run_on_load": true,
       "bash_script": [
+        "node -v",
         "[ ! -d 'repo' ] && git clone  --depth 1 https://github.com/DefiLlama/defillama-server repo",
         "[ ! -d 'runner' ] && git clone  --depth 1 https://github.com/DefiLlama/task-runner runner",
         "cd runner",
@@ -27,7 +28,9 @@
         "git pull",
         "cd ..",
         "npm run cache-config",
-        "pwd && echo '--------checking if dev module is installed----------' && npm ls @types/aws-lambda"
+        "echo '-------ls @types-----' && ls node_modules/@types && echo '-------done-----'",
+        "pwd && echo '--------checking if dev module is installed----------' && npm ls @types/aws-lambda",
+        "node -v"
       ]
     },
     "Start api server": {
