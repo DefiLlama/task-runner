@@ -18,12 +18,13 @@
         "git pull",
         "cd ..",
         "npm i",
-        "npm run cache-config",
         "npm update @defillama/sdk",
         "cd DefiLlama-Adapters",
         "git checkout main",
         "git pull",
         "cd ..",
+        "npm run cache-config",
+        "npm ls @types/aws-lambda",
         "cd dev-metrics",
         "npm i"
       ]

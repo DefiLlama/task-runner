@@ -18,12 +18,12 @@
         "git pull",
         "cd ..",
         "npm i",
-        "npm run cache-config",
         "npm update @defillama/sdk",
         "cd DefiLlama-Adapters",
         "git checkout main",
         "git pull",
         "cd ..",
+        "npm run cache-config",
         "cd dev-metrics",
         "npm i"
       ]
