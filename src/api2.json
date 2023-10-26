@@ -27,7 +27,7 @@
         "git pull",
         "cd ..",
         "npm run cache-config",
-        "pwd && echo '--------checking if dev module is installed----------' && npm ls @types/aws-lambda",
+        "pwd && echo '--------checking if dev module is installed----------' && npm ls @types/aws-lambda"
       ]
     },
     "Start api server": {
