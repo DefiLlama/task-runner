@@ -24,7 +24,8 @@
         "git pull",
         "cd ..",
         "npm run cache-config",
-        "npm ls @types/aws-lambda",
+        "pwd && cat package.json",
+        "pwd && echo 'checking if dev module is installed' && npm ls @types/aws-lambda",
         "cd dev-metrics",
         "npm i"
       ]
