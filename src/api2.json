@@ -1,7 +1,7 @@
 {
   "tasks": {
     "[Init] Pull code from git": {
-      "schedule": "*/15 * * * *",
+      "schedule": "*/25 * * * *",
       "run_on_load": true,
       "bash_script": [
         "node -v",
@@ -19,25 +19,13 @@
         "git pull",
         "cd ..",
         "npm i",
-        "npm update @defillama/sdk",
-        "npm i @types/aws-lambda",
-        "echo '-------ls node_modules-----' && ls node_modules && echo '-------done-----'",
-        "echo '-------ls @types-----' && ls node_modules/@types && echo '-------done-----'",
         "cd DefiLlama-Adapters",
         "git checkout main",
         "git pull",
         "cd ..",
         "npm run cache-config",
-        "echo '-------ls @types-----' && ls node_modules/@types && echo '-------done-----'",
-        "pwd && echo '--------checking if dev module is installed----------' && npm ls @types/aws-lambda",
-        "node -v"
+        "npm run api2-start-server"
       ]
-    },
-    "Start api server": {
-      "run_on_load": true,
-      "schedule": "59 * * * *",
-      "npm_script": "api2-start-server",
-      "script_location": "defi"
     }
   }
 }
