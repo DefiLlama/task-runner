@@ -4,7 +4,7 @@
       "schedule": "*/25 * * * *",
       "run_on_load": true,
       "bash_script": [
-        "node -v",
+        "echo node_Version && node -v",
         "[ ! -d 'repo' ] && git clone  --depth 1 https://github.com/DefiLlama/defillama-server repo",
         "[ ! -d 'runner' ] && git clone  --depth 1 https://github.com/DefiLlama/task-runner runner",
         "cd runner",
@@ -18,14 +18,13 @@
         "git checkout main",
         "git pull",
         "cd ..",
-        "npm i",
-        "cd DefiLlama-Adapters",
-        "git checkout main",
-        "git pull",
-        "cd ..",
-        "npm run cache-config",
-        "npm run api2-start-server"
+        "NODE_ENV=development npm i"
       ]
+    },
+    "[pm2] Run api2 rest server": {
+      "is_pm2": true,
+      "npm_script": "api2-start-server",
+      "script_location": "defi"
     }
   }
 }

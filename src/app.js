@@ -50,8 +50,11 @@ async function hotloadTasks(isFirstRun) {
         } catch (e) {
           console.log('Error running task first time', id, e)
         }
+      } else if (taskObj.is_pm2) {
+        taskFn()
       }
-      scheduledTasks[id] = cron.schedule(taskObj.schedule, taskFn)
+
+      if (taskObj.schedule) scheduledTasks[id] = cron.schedule(taskObj.schedule, taskFn)
     }
   }
 
@@ -59,6 +62,7 @@ async function hotloadTasks(isFirstRun) {
     return async () => {
       taskObj.name = id
       try {
+        if (taskObj.is_pm2) return runPM2Command(taskObj)
         if (taskObj.npm_script) return runNpmCommand(taskObj)
         return spawnPromise(taskObj)
       } catch (e) {
@@ -73,6 +77,26 @@ async function hotloadTasks(isFirstRun) {
       bash_script: `
         cd repo/${script_location}
         npm run ${npm_script}
+      `
+    })
+  }
+
+
+  async function runPM2Command({ npm_script, name, script_location }) {
+    console.log({
+      name,
+      bash_script: `
+        cd repo/${script_location}
+        pm2 start npm --name "${name}" -- ${npm_script}
+        pm2 logs
+      `
+    })
+    return spawnPromise({
+      name,
+      bash_script: `
+        cd repo/${script_location}
+        npx pm2 start npm --name "${name}" -- ${npm_script}
+        npx pm2 logs
       `
     })
   }
