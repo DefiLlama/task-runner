@@ -69,6 +69,21 @@
       "schedule": "55 2 */3 * *",
       "npm_script": "get-electric-mapping",
       "script_location": "defi/dev-metrics"
+    },
+    "[Emissions] store emissions": {
+      "schedule": "0 * * * *",
+      "npm_script": "store-emissions",
+      "script_location": "defi"
+    },
+    "[Emissions] store emissions index": {
+      "schedule": "30 * * * *",
+      "npm_script": "store-emissions-index",
+      "script_location": "defi"
+    },
+    "[Chain Assets] store chain assets": {
+      "schedule": "15 */6 * * *",
+      "npm_script": "store-chain-assets",
+      "script_location": "defi"
     }
   }
 }
