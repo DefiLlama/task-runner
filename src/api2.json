@@ -9,6 +9,7 @@
         "cd runner",
         "git pull",
         "cd ../repo/defi",
+        "git checkout api2-migrate-routes",
         "git stash",
         "git pull",
         "git submodule update --init --recursive",
