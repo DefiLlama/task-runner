@@ -28,9 +28,8 @@
         "SKIP_CAHE_WRITE_R2=true npm run cache-config",
         "npm run api2-cron-task",
         "# start/rolling restart api2 server",
-        "npx pm2 start src/api2/ecosystem.config.js || npx pm2 reload",
-        "npx pm2 status all",
-        "git status"
+        "npx pm2 start src/api2/ecosystem.config.js || npx pm2 reload >/dev/null",
+        "npx pm2 status all"
       ]
     },
     "[Init] Update Raises data": {
