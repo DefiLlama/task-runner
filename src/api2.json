@@ -41,7 +41,7 @@
       "schedule": "42 */2 * * *",
       "run_on_load": true,
       "bash_script": [
-        "cd ../repo/defi",
+        "cd ./repo/defi",
         "npx ts-node src/api2/cron-task/raises.ts"
       ]
     },
