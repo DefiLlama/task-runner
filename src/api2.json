@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "[Init] Pull code from git": {
-      "schedule": "*/30 * * * *",
+    "[Init] Start/restart Api2 server": {
+      "schedule": "*/15 * * * *",
       "run_on_load": true,
       "bash_script": [
         "[ ! -d 'repo' ] && git clone  --depth 1 https://github.com/DefiLlama/defillama-server repo",
@@ -30,6 +30,23 @@
         "# start/rolling restart api2 server",
         "npx pm2 start src/api2/ecosystem.config.js || npx pm2 reload",
         "npx pm2 status all",
+        "npx pm2 logs"
+      ]
+    },
+    "[Init] Update Raises data": {
+      "schedule": "42 */2 * * *",
+      "run_on_load": true,
+      "bash_script": [
+        "cd ../repo/defi",
+        "npx ts-node src/api2/cron-task/raises.ts"
+      ]
+    },
+    "[Logs]": {
+      "schedule": "*/15 * * * *",
+      "run_on_load": true,
+      "no_schedule": true,
+      "bash_script": [
+        "cd ../repo/defi",
         "npx pm2 logs"
       ]
     }

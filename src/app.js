@@ -51,6 +51,7 @@ async function hotloadTasks(isFirstRun) {
           console.log('Error running task first time', id, e)
         }
       }
+      if (taskObj.no_schedule === true) continue;
       scheduledTasks[id] = cron.schedule(taskObj.schedule, taskFn)
     }
   }
