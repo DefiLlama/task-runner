@@ -41,7 +41,6 @@
       ]
     },
     "[Logs]": {
-      "schedule": "*/15 * * * *",
       "run_on_load": true,
       "no_schedule": true,
       "bash_script": [

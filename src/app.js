@@ -19,6 +19,7 @@ async function load() {
 load()
 
 async function hotloadTasks(isFirstRun) {
+  console.log('Running Tasks: ', Object.keys(scheduledTasks))
   await loadSecrets()
   const { tasks } = readTasks()
   removeDelistedTasks()
@@ -51,7 +52,7 @@ async function hotloadTasks(isFirstRun) {
           console.log('Error running task first time', id, e)
         }
       }
-      if (taskObj.no_schedule === true) continue;
+      if (taskObj.no_schedule === true || !taskObj.schedule) continue;
       scheduledTasks[id] = cron.schedule(taskObj.schedule, taskFn)
     }
   }
