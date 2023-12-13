@@ -24,6 +24,7 @@
         "git checkout main",
         "git pull",
         "cd ..",
+        "npm run prebuild",
         "npm run cache-config",
         "cd dev-metrics",
         "npm i"
