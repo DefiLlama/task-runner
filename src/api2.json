@@ -4,8 +4,9 @@
       "schedule": "*/15 * * * *",
       "run_on_load": true,
       "bash_script": [
-        "[ ! -d 'repo' ] && git clone  --depth 1 https://github.com/DefiLlama/defillama-server repo",
         "[ ! -d 'runner' ] && git clone  --depth 1 https://github.com/DefiLlama/task-runner runner",
+        "[ ! -d 'repo' ] && mkdir repo # we do this (plus below line) to clone repo first time into shared volume",
+        "[ ! -d 'repo/defi' ] && git clone  --depth 1 https://github.com/DefiLlama/defillama-server tmp_repo && mv tmp_repo/* repo && mv tmp_repo/.* repo; rm -rf tmp_repo",
         "cd runner",
         "git pull >/dev/null ",
         "cd ../repo/defi",
