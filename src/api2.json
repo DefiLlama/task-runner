@@ -26,7 +26,6 @@
         "cd ..",
         "# set up dummy imports",
         "npm run prebuild",
-        "echo 'export default {}' > src/utils/imports/adapters.ts",
         "SKIP_CAHE_WRITE_R2=true npm run cache-config",
         "npm run api2-cron-task",
         "# start/rolling restart api2 server",

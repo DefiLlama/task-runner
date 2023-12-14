@@ -82,6 +82,11 @@
       "npm_script": "store-emissions-index",
       "script_location": "defi"
     },
+    "[TVL] notify outdated": {
+      "schedule": "1 * * * *",
+      "npm_script": "notify-outdated",
+      "script_location": "defi"
+    },
     "[Chain Assets] store chain assets": {
       "schedule": "15 */6 * * *",
       "npm_script": "store-chain-assets",
