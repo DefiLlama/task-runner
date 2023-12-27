@@ -25,19 +25,27 @@
         "git pull   >/dev/null ",
         "cd ..",
         "# set up dummy imports",
-        "npm run prebuild",
+        "IS_API2_SERVER=true npm run prebuild",
         "SKIP_CAHE_WRITE_R2=true npm run cache-config",
         "npm run api2-cron-task",
         "# start/rolling restart api2 server",
         "npx pm2 start src/api2/ecosystem.config.js || npx pm2 reload >/dev/null"
       ]
     },
-    "[Init] Update Raises data": {
+    "[Cron] Update Raises data": {
       "schedule": "42 */2 * * *",
       "run_on_load": true,
       "bash_script": [
         "cd ./repo/defi",
         "npx ts-node src/api2/cron-task/raises.ts"
+      ]
+    },
+    "[Cron] Update Dimensions data": {
+      "schedule": "45 */2 * * *",
+      "run_on_load": true,
+      "bash_script": [
+        "cd ./repo/defi",
+        "npx ts-node src/api2/cron-task/dimensions.ts"
       ]
     },
     "[Logs]": {
