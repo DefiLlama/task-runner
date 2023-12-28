@@ -81,7 +81,7 @@
       "script_location": "defi"
     },
     "[Chain Assets] store chain assets": {
-      "schedule": "15 */6 * * *",
+      "schedule": "15 */3 * * *",
       "npm_script": "store-chain-assets",
       "script_location": "defi"
     }
