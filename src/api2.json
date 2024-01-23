@@ -37,15 +37,15 @@
       "run_on_load": true,
       "bash_script": [
         "cd ./repo/defi",
-        "npx ts-node src/api2/cron-task/raises.ts"
+        "npx ts-node --transpile-only src/api2/cron-task/raises.ts"
       ]
     },
     "[Cron] Update Dimensions data": {
-      "schedule": "45 */2 * * *",
+      "schedule": "45 */6 * * *",
       "run_on_load": true,
       "bash_script": [
         "cd ./repo/defi",
-        "npx ts-node src/api2/cron-task/dimensions.ts"
+        "npx ts-node --transpile-only src/api2/cron-task/dimensions.ts"
       ]
     },
     "[Logs]": {
