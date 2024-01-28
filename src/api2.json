@@ -43,10 +43,8 @@
     "[Cron] Update Dimensions data": {
       "schedule": "45 */6 * * *",
       "run_on_load": true,
-      "bash_script": [
-        "cd ./repo/defi",
-        "npx ts-node --transpile-only src/api2/cron-task/dimensions.ts"
-      ]
+      "npm_script": "cron-dimensions",
+      "script_location": "defi"
     },
     "[Logs]": {
       "run_on_load": true,
