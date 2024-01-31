@@ -27,7 +27,9 @@
         "npm run prebuild",
         "npm run cache-config",
         "cd dev-metrics",
-        "npm i"
+        "npm i",
+        "cd ..",
+        "npm run extension-updateExtensionTwitterConfig"
       ]
     },
     "[TVL] Updating tvl data": {
