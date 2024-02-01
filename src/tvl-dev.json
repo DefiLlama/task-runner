@@ -28,8 +28,7 @@
         "npm run cache-config",
         "cd dev-metrics",
         "npm i",
-        "cd ..",
-        "npm run extension-updateExtensionTwitterConfig"
+        "cd .."
       ]
     },
     "[TVL] Updating tvl data": {
@@ -87,6 +86,12 @@
     "[TVL] notify outdated": {
       "schedule": "1 * * * *",
       "npm_script": "notify-outdated",
+      "script_location": "defi"
+    },
+    "[Defillama extension] Update twitter config": {
+      "schedule": "*/15 * * * *",
+      "run_on_load": true,
+      "npm_script": "extension-updateExtensionTwitterConfig",
       "script_location": "defi"
     },
     "[Chain Assets] store chain assets": {
