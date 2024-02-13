@@ -1,7 +1,7 @@
 {
   "tasks": {
     "[Init] Start/restart Api2 server": {
-      "schedule": "*/15 * * * *",
+      "schedule": "*/30 * * * *",
       "run_on_load": true,
       "bash_script": [
         "[ ! -d 'runner' ] && git clone  --depth 1 https://github.com/DefiLlama/task-runner runner",
@@ -24,12 +24,12 @@
         "git checkout main   >/dev/null ",
         "git pull   >/dev/null ",
         "cd ..",
-        "# set up dummy imports",
+        "echo set up dummy imports",
         "IS_API2_SERVER=true npm run prebuild",
         "SKIP_CAHE_WRITE_R2=true npm run cache-config",
         "npm run api2-cron-task",
-        "# start/rolling restart api2 server",
-        "npx pm2 start src/api2/ecosystem.config.js || npx pm2 reload >/dev/null"
+        "echo start/rolling restart api2 server",
+        "npm run api2-prod"
       ]
     },
     "[Cron] Update Raises data": {
