@@ -98,16 +98,6 @@
       "schedule": "15 */3 * * *",
       "npm_script": "store-chain-assets",
       "script_location": "defi"
-    },
-    "[Dimensions] Store Dimensions": {
-      "schedule": "3 0 * * *",
-      "npm_script": "dimensions-store-all",
-      "script_location": "defi"
-    },
-    "[Dimensions] Notify & backfill": {
-      "schedule": "42 */2 * * *",
-      "npm_script": "dimensions-notify-backfill",
-      "script_location": "defi"
     }
   }
 }
