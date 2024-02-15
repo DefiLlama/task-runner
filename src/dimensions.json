@@ -19,7 +19,7 @@
         "npm run prebuild"
       ]
     },
-    "[Dimensions] Store Dimensions": {
+    "[Dimensions] Store Dimensions - 0": {
       "schedule": "3 0 * * *",
       "npm_script": "dimensions-store-all",
       "script_location": "defi"
