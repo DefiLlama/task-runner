@@ -14,16 +14,8 @@
         "git pull",
         "git submodule update --init --recursive",
         "git submodule update --remote --merge",
-        "cd DefiLlama-Adapters",
-        "git checkout main",
-        "git pull",
-        "cd ..",
         "npm i",
         "npm update @defillama/sdk",
-        "cd DefiLlama-Adapters",
-        "git checkout main",
-        "git pull",
-        "cd ..",
         "npm run prebuild"
       ]
     },
@@ -32,7 +24,7 @@
       "npm_script": "dimensions-store-all",
       "script_location": "defi"
     },
-    "[Dimensions] Notify & backfill": {
+    "[Dimensions] Notify & backfill - 0": {
       "schedule": "42 */2 * * *",
       "run_on_load": true,
       "npm_script": "dimensions-notify-backfill",
