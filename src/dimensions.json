@@ -19,12 +19,13 @@
         "npm run prebuild"
       ]
     },
-    "[Dimensions] Store Dimensions": {
-      "schedule": "3 * * * *",
+    "[Dimensions] Store Dimensions v2": {
+      "schedule": "6 * * * *",
       "npm_script": "dimensions-store-all",
+      "run_on_load": true,
       "script_location": "defi"
     },
-    "[Dimensions] Notify": {
+    "[Dimensions] Notify v2": {
       "schedule": "42 * * * *",
       "run_on_load": true,
       "npm_script": "dimensions-notify-backfill",
