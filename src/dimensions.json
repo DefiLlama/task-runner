@@ -14,6 +14,10 @@
         "git pull",
         "git submodule update --init --recursive",
         "git submodule update --remote --merge",
+        "cd dimension-adapters",
+        "git checkout master",
+        "git pull",
+        "cd ..",
         "npm i",
         "npm update @defillama/sdk",
         "npm run prebuild"
