@@ -73,6 +73,11 @@
       "npm_script": "get-electric-mapping",
       "script_location": "defi/dev-metrics"
     },
+    "[Github] Notify missing data": {
+      "schedule": "35 */12 * * *",
+      "npm_script": "github-alerter",
+      "script_location": "defi/dev-metrics"
+    },
     "[Emissions] store emissions": {
       "schedule": "0 * * * *",
       "npm_script": "store-emissions",
