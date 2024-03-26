@@ -14,6 +14,7 @@
         "git submodule update --init --recursive",
         "git submodule update --recursive --remote --merge",
         "npm i",
+        "npm update @defillama/sdk",
         "npm run prebuild"
       ]
     },
