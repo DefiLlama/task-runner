@@ -28,6 +28,7 @@
         "IS_API2_SERVER=true npm run prebuild",
         "SKIP_CAHE_WRITE_R2=true npm run cache-config",
         "npm run api2-cron-task",
+        "npm run cron-dimensions",
         "echo start/rolling restart api2 server",
         "npm run api2-prod"
       ]
@@ -39,12 +40,6 @@
         "cd ./repo/defi",
         "npx ts-node --transpile-only src/api2/cron-task/raises.ts"
       ]
-    },
-    "[Cron] Update Dimensions data": {
-      "schedule": "45 */6 * * *",
-      "run_on_load": true,
-      "npm_script": "cron-dimensions",
-      "script_location": "defi"
     },
     "[Logs]": {
       "run_on_load": true,
