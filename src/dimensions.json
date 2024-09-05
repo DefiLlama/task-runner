@@ -23,12 +23,6 @@
       "npm_script": "dimensions-store-all",
       "run_on_load": true,
       "script_location": "defi"
-    },
-    "[Dimensions] Notify v2": {
-      "schedule": "42 * * * *",
-      "run_on_load": true,
-      "npm_script": "dimensions-notify-backfill",
-      "script_location": "defi"
     }
   }
 }
