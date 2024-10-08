@@ -1,7 +1,7 @@
 {
   "tasks": {
     "[Init] Start/restart Api2 server": {
-      "schedule": "*/30 * * * *",
+      "schedule": "30 */6 * * *",
       "run_on_load": true,
       "bash_script": [
         "[ ! -d 'runner' ] && git clone  --depth 1 https://github.com/DefiLlama/task-runner runner",
