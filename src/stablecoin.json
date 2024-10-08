@@ -1,0 +1,38 @@
+{
+  "tasks": {
+    "[Init] Start/restart Api2 server": {
+      "schedule": "*/30 * * * *",
+      "run_on_load": true,
+      "bash_script": [
+        "[ ! -d 'runner' ] && git clone  --depth 1 https://github.com/DefiLlama/task-runner runner",
+        "[ ! -d 'repo' ] && git clone  --depth 1 https://github.com/DefiLlama/peggedassets-server repo",
+        "cd runner",
+        "git pull >/dev/null ",
+        "cd ../repo",
+        "git stash >/dev/null ",
+        "git pull >/dev/null ",
+        "npm i  >/dev/null",
+        "npm run api2-cron-task",
+        "npm run cron-dimensions",
+        "echo start/rolling restart api2 server",
+        "npm run api2-prod"
+      ]
+    },
+    "[Cron] Store rates": {
+      "schedule": "42 */6 * * *",
+      "run_on_load": false,
+      "bash_script": [
+        "cd repo",
+        "npm run api2-store-rates"
+      ]
+    },
+    "[Logs]": {
+      "run_on_load": true,
+      "no_schedule": true,
+      "bash_script": [
+        "cd repo",
+        "npx pm2 logs"
+      ]
+    }
+  }
+}
