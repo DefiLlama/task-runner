@@ -13,7 +13,6 @@
         "git pull >/dev/null ",
         "npm i  >/dev/null",
         "npm run api2-cron-task",
-        "npm run cron-dimensions",
         "echo start/rolling restart api2 server",
         "npm run api2-prod"
       ]
